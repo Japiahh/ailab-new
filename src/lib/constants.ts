@@ -211,9 +211,10 @@ export const NAVIGATION = {
   ],
   
   social: {
-    instagram: 'https://instagram.com/ailab_telkomuniversity',
-    linkedin: 'https://linkedin.com/company/ailab-telkom-university',
-    email: 'ailab@telkomuniversity.ac.id',
+    github: 'https://github.com/ailabtelkom',
+    instagram: 'https://www.instagram.com/ailabtelkom',
+    linkedin: 'https://www.linkedin.com/company/ailabtelkom/',
+    email: 'ailab.telu@gmail.com',
   },
 } as const;
 
@@ -228,8 +229,8 @@ export const LAB_INFO = {
     address: 'Jl. Telekomunikasi No. 1, Terusan Buah Batu, Bandung 40257',
   },
   contact: {
-    email: 'ailab@telkomuniversity.ac.id',
-    phone: '+62 22 7566456',
+    email: 'ailab.telu@gmail.com',
+    phone: '+6289516722649',
   },
   established: 2015,
 } as const;

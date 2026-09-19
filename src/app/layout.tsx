@@ -2,6 +2,7 @@ import type { Metadata, Viewport } from 'next'
 import { Inter } from 'next/font/google'
 import './globals.css'
 import { Header, Footer } from '@/components/layout'
+import { getAssetPath } from '@/lib/utils'
 
 const inter = Inter({ 
   subsets: ['latin'],
@@ -61,9 +62,20 @@ export const metadata: Metadata = {
     description: 'Artificial Intelligence Laboratory at Telkom University - Advancing AI research and education.',
     images: ['/images/logos/logo-lg.png'],
   },
-  metadataBase: new URL('https://ailab.telkomuniversity.ac.id'),
+  icons: {
+    icon: [
+      { url: `${process.env.NEXT_PUBLIC_BASE_PATH || ''}/favicon.ico` },
+      { url: `${process.env.NEXT_PUBLIC_BASE_PATH || ''}/images/logos/logo-xs.png`, sizes: '32x32', type: 'image/png' },
+      { url: `${process.env.NEXT_PUBLIC_BASE_PATH || ''}/images/logos/logo-md.png`, sizes: '192x192', type: 'image/png' },
+    ],
+    apple: [
+      { url: `${process.env.NEXT_PUBLIC_BASE_PATH || ''}/images/logos/logo-md.png`, sizes: '180x180', type: 'image/png' },
+    ],
+    shortcut: `${process.env.NEXT_PUBLIC_BASE_PATH || ''}/favicon.ico`,
+  },
+  metadataBase: new URL('https://ailab-telkom-university.github.io/ailab-new'),
   verification: {
-    google: 'your-google-verification-code',
+    google: 'google82fbe5c77b9449ed',
   },
 }
 
@@ -80,6 +92,14 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className={inter.variable}>
+      <head>
+        <meta name="google-site-verification" content="google82fbe5c77b9449ed" />
+        <link rel="shortcut icon" href={getAssetPath('/favicon.ico')} />
+        <link rel="icon" href={getAssetPath('/favicon.ico')} sizes="any" />
+        <link rel="icon" href={getAssetPath('/images/logos/logo-xs.png')} type="image/png" sizes="32x32" />
+        <link rel="icon" href={getAssetPath('/images/logos/logo-md.png')} type="image/png" sizes="192x192" />
+        <link rel="apple-touch-icon" href={getAssetPath('/images/logos/logo-md.png')} sizes="180x180" type="image/png" />
+      </head>
       <body className={`${inter.className} antialiased`}>
         <div className="min-h-screen flex flex-col">
           <Header />
